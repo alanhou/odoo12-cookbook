@@ -5,8 +5,10 @@
 # Website: https://alanhou.org
 #-------------------------------------------------------------------------------
 # sudo chmod +x odoo-install.sh
-# ./odoo-install
+# ./odoo-install.sh
 ################################################################################
+
+IP_ADDR=`ifconfig -a|grep inet|grep -v 127.0.0.1|grep -v inet6|awk '{print $2}'|tr -d "addr:"​|head -1`
 
 echo -e "\n---- Update Ubuntu ----"
 sudo apt-get update
@@ -23,7 +25,7 @@ sudo apt-get -fy install
 
 echo -e "\n---- Install build dependencies ----"
 sudo apt-get install -y gcc python3.5-dev libxml2-dev \
-libxslt1-dev libevent-dev libsasl2-dev libssl1.0-dev libldap2-dev \
+libxslt1-dev libevent-dev libsasl2-dev libssl-dev libldap2-dev \
 libpq-dev libpng-dev libjpeg-dev
 
 echo -e "\n---- Configure PostgreSQL ----"
@@ -42,17 +44,19 @@ cd odoo
 
 echo -e "\n---- Create virtualenv ----"
 virtualenv -p python3 ~/odoo-12.0
-source ~/odoo-12.0/bin/activate
+# source ~/odoo-12.0/bin/activate
 
 echo -e "\n---- Install Python dependencies  ----"
-pip3 install -r requirements.txt
+~/odoo-12.0/bin/pip3 install -r requirements.txt
 
 echo -e "\n---- Start Odoo instance  ----"
-createdb odoo-test
-python3 odoo-bin -d odoo-test --addons-path=addons \
---db-filter=odoo-test$
+cd ~/odoo-dev/odoo/
+nohup ~/odoo-12.0/bin/python3 ~/odoo-dev/odoo/odoo-bin -d odoo-test --addons-path=~/odoo-dev/odoo/addons \
+--db-filter=odoo-test$ -i base >/dev/null 2>&1 &
 
 echo "-----------------------------------------------------------"
-echo "Done! Open your browser and visit http://localhost:8069"
+echo "Done! Open your browser and visit http://localhost:8069 or http://${IP_ADDR}:8069"
 echo "Default login & password: admin"
+echo "Stop all Odoo proccesses: ps -ef | grep odoo | awk '{ print $2}' | xargs kill -9"
+echo "To restart Odoo with logs enabled:  ~/odoo-12.0/bin/python3 ~/odoo-dev/odoo/odoo-bin -d odoo-test"
 echo "-----------------------------------------------------------"

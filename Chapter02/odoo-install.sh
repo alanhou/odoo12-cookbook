@@ -13,6 +13,10 @@ if [ -z "${projectname}" ];then
 	projectname="projectname"
 fi
 
+echo "Please input your Git username:"
+read -t 30 -p "Please input your Git username(Hit Enter to skip):" git_user
+read -t 30 -p "Please input your Git email(Hit Enter to skip):" git_email
+
 IP_ADDR=`ifconfig -a|grep inet|grep -v 127.0.0.1|grep -v inet6|awk '{print $2}'|tr -d "addr:"​|head -1`
 
 echo -e "\n---- Update Ubuntu ----"
@@ -89,12 +93,14 @@ cat>.gitignore<<EOF
 /logs/
 EOF
 
-# echo -e "\n---- Configure git & commit ----"
-# git config --global user.name "Your Name"
-# git config --global user.email youremail@example.com
-# git init
-# git add .
-# git commit -m "initial version of ${projectname}"
+if [ -n "${git_user}" ]&&[ -n "${git_email}" ];then
+	echo -e "\n---- Configure git & commit ----"
+	git config --global user.name "${git_user}"
+	git config --global user.email "${git_email}"
+	git init
+	git add .
+	git commit -m "initial version of ${projectname}"
+fi
 
 
 echo "-----------------------------------------------------------"

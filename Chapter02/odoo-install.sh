@@ -13,7 +13,6 @@ if [ -z "${projectname}" ];then
 	projectname="projectname"
 fi
 
-echo "Please input your Git username:"
 read -t 30 -p "Please input your Git username(Hit Enter to skip):" git_user
 read -t 30 -p "Please input your Git email(Hit Enter to skip):" git_email
 

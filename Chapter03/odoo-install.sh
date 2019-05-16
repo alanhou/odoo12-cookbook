@@ -25,6 +25,7 @@ sudo apt-get -fy install
 
 echo -e "\n---- Database related settings ----"
 # sudo adduser odoo
+groupadd odoo
 sudo useradd -m odoo -g odoo
 sudo -u postgres createuser odoo
 sudo -u postgres createdb -O odoo odoo_project
@@ -58,7 +59,7 @@ cd ~/odoo-prod/project/
 mkdir local-addons filestore logs
 echo -e "\n---- Dummy hack ----"
 mkdir -p local-addons/dummy
-touch local/dummy/__init__.py
+touch local-addons/dummy/__init__.py
 echo '{"name": "dummy", "installable": False}' >\
 local/dummy/__manifest__.py
 
@@ -92,7 +93,3 @@ echo "4. Open your browser and visit http://localhost:8069 or http://${IP_ADDR}:
 echo "Default login & password: admin"
 echo "Press Ctrl+C to stop odoo"
 echo "-----------------------------------------------------------"
-
-
-
-odoo_project

@@ -12,8 +12,8 @@ IP_ADDR=`ip addr | grep 'state UP' -A2 | grep inet|grep -v docker|tail -n1 | awk
 
 echo -e "\n---- Install dependencies ----"
 sudo apt-get update
-sudo apt-get install -y git python3.5 postgresql nano virtualenv \
- gcc python3.5-dev libxml2-dev libxslt1-dev \
+sudo apt-get install -y git python3 postgresql nano virtualenv \
+ gcc python3-dev libxml2-dev libxslt1-dev \
  libevent-dev libsasl2-dev libldap2-dev libpq-dev \
  libpng-dev libjpeg-dev \
  xfonts-75dpi xfonts-base wget xz-utils
@@ -90,7 +90,7 @@ echo "1. Switch User: sudo su - odoo"
 echo "2. Activate virtualenv: source env-odoo-12.0/bin/activate"
 echo "3. Initialize: ~/odoo-prod/project/bin/start-odoo -d odoo_project --save -i base --stop-after-init"
 echo "4. Run your odoo instance: ~/odoo-prod/project/bin/start-odoo"
-echo "4. Open your browser and visit http://localhost:8069 or http://${IP_ADDR}:8069"
+echo "5. Open your browser and visit http://localhost:8069 or http://${IP_ADDR}:8069"
 echo "Default login & password: admin"
 echo "Press Ctrl+C to stop odoo"
 echo "-----------------------------------------------------------"

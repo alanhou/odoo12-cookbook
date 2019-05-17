@@ -8,7 +8,8 @@
 # ./odoo-install.sh
 ################################################################################
 
-IP_ADDR=`ifconfig -a|grep inet|grep -v 127.0.0.1|grep -v inet6|awk '{print $2}'|tr -d "addr:"​|head -1`
+# IP_ADDR=`ifconfig -a|grep inet|grep -v 127.0.0.1|grep -v inet6|awk '{print $2}'|tr -d "addr:"​|head -1`
+IP_ADDR=`ip addr | grep 'state UP' -A2 | grep inet|grep -v docker|tail -n1 | awk '{print $2}' | cut -f1  -d'/'`
 
 echo -e "\n---- Update Ubuntu ----"
 sudo apt-get update

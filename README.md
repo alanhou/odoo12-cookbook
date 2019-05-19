@@ -34,43 +34,44 @@ Odoo涉及的领域很广，对于新手很难跟上这一学习曲线。Odoo 12
 
 [第五章 应用模型](https://alanhou.org/application-models/)：聚焦于Odoo模型结构，并讲解所有字段类型及它们的属性。本章还包含继承和扩展已有模型的不同方式。
 
-第六章 基本服务端部署：介绍Odoo框架的API，展示增删改查（CRUD）方法以及其它常用方法的使用。本章还讲解如何在Odoo中编写业务逻辑。
+[第六章 基本服务端部署](https://alanhou.org/basic-server-side-development/)：介绍Odoo框架的API，展示增删改查（CRUD）方法以及其它常用方法的使用。本章还讲解如何在Odoo中编写业务逻辑。
 
-[第七章 模型数据](https://alanhou.org/odoo12-module-data/)：显示如何迁移你的插件模块和内置数据。还讲解编写迁移函数的基本步骤。
+[第七章 模块数据](https://alanhou.org/odoo12-module-data/)：显示如何迁移你的插件模块和内置数据。还讲解编写迁移函数的基本步骤。
 
 [第八章 调试](https://alanhou.org/debugging/)：提供调试Odoo代码的不同策略。本章包含开发者选项和Odoo shell的使用。
 
-第九章 高级服务端开发技巧：讲解ORM框架更高级的课题。对于开发向导、SQL视图、安装钩子（hook）、on-change方法等非常有用。本章还讲解了如何在数据库中执行原生SQL查询。
+[第九章 高级服务端开发技巧](https://alanhou.org/advanced-server-side-development-techniques/)：讲解ORM框架更高级的课题。对于开发向导、SQL视图、安装钩子（hook）、on-change方法等非常有用。本章还讲解了如何在数据库中执行原生SQL查询。
 
-第十章 后端视图：教授如何创建不同的UI视图以及如何从用户界面中触发业务逻辑。它涵盖了所有常用视图，如列表、表单、看板、日历、图形、搜索和透视表视图，还有一些新引入的视图，如cohort和仪表盘。本章还包含修改/继承已有视图的一些指导。
+[第十章 后端视图](https://alanhou.org/backend-views/)：教授如何创建不同的UI视图以及如何从用户界面中触发业务逻辑。它涵盖了所有常用视图，如列表、表单、看板、日历、图形、搜索和透视表视图，还有一些新引入的视图，如cohort和仪表盘。本章还包含修改/继承已有视图的一些指导。
 
-第十一章 权限安全：涵盖Odoo框架的安全方面。它显示了如何通过创建安全组、访问控制列表和记录级别规则来控制/限制用户对模型的访问。
+[第十一章 权限安全](https://alanhou.org/access-security/)：涵盖Odoo框架的安全方面。它显示了如何通过创建安全组、访问控制列表和记录级别规则来控制/限制用户对模型的访问。
 
 [第十二章 国际化](https://alanhou.org/internationalization/)：显示如何翻译你的插件模块的用户界面，并为管理翻译文件提供了有用的技巧。
 
-第十三章 自动化、工作流和打印件：描绘了Odoo中实现更好的业务流程可用的不同工作和技巧。它展示如何使用服务端动作、自动化动作和基于时间的调度动作。本章还包含为你的模型创建PDF报告的指南。
+[第十三章 自动化、工作流和打印件](https://alanhou.org/automation-workflows-printouts/)：描绘了Odoo中实现更好的业务流程可用的不同工作和技巧。它展示如何使用服务端动作、自动化动作和基于时间的调度动作。本章还包含为你的模型创建PDF报告的指南。
 
-第十四章 网页服务端开发：涵盖Odoo web服务的核心内容。它展示了如何创建自定义URL路径由来在指定URL上提供服务，以及如何对这些URL进行访问控制。
+[第十四章 网页服务端开发](https://alanhou.org/web-server-development/)：涵盖Odoo web服务的核心内容。它展示了如何创建自定义URL路径由来在指定URL上提供服务，以及如何对这些URL进行访问控制。
 
-[第十五章 CMS网站开发](https://alanhou.org/web-client-development/)：讲解如何使用Odoo管理网站。还展示了如何创建和修改美观的网页和QWeb模板。本章还包含如何创建带选项的动态网页构建块。它包含一些管理 SEO、用户表单、UTM追踪、网站地图和获取访客地理信息的独立教程。本章还强调了Odoo中最新的多站点概念。
+[第十五章 CMS网站开发](https://alanhou.org/cms-website-development/)：讲解如何使用Odoo管理网站。还展示了如何创建和修改美观的网页和QWeb模板。本章还包含如何创建带选项的动态网页构建块。它包含一些管理 SEO、用户表单、UTM追踪、网站地图和获取访客地理信息的独立教程。本章还强调了Odoo中最新的多站点概念。
 
-第十六章 网页客户端开发：深入到Odoo的JavaScript部分。涵盖了如何创建新字段控件以及对服务端发送RPC调用。还包含如何从零开始创建全新的视图。你还将学习如何创建操作向导。
+[第十六章 网页客户端开发](https://alanhou.org/web-client-development/)：深入到Odoo的JavaScript部分。涵盖了如何创建新字段控件以及对服务端发送RPC调用。还包含如何从零开始创建全新的视图。你还将学习如何创建操作向导。
 
-第十七章 Odoo的应用内购买：涵盖有关Odoo最新的应用内购买（IAP）概念的所有内容。本章中你学习到如何为IAP创建客户端和服务模块。你还将学习到如何创建IAP账户并从终端用户提取IAP款项。
+[第十七章 Odoo的应用内购买](https://alanhou.org/in-app-purchasing-odoo/)：涵盖有关Odoo最新的应用内购买（IAP）概念的所有内容。本章中你学习到如何为IAP创建客户端和服务模块。你还将学习到如何创建IAP账户并从终端用户提取IAP款项。
 
 [第十八章 自动化测试用例](https://alanhou.org/automated-test-cases/)：涵盖如何在Odoo中编写和执行自动化测试用例，包含服务端、客户端以及操作向导集成的测试用例。本章还包含设置chrome-headless（无头浏览器模式）来截屏和录制视频来查看出错的客户端的测试用例的示范。
 
-第十九章 使用Odoo.sh管理、部署和测试：讲解Odoo.sh，一个部署Odoo实例的PaaS平台，包含生产、模拟和开发分支的各方面。也讲解了该平台的不同选项。
+[第十九章 使用Odoo.sh管理、部署和测试](https://alanhou.org/managing-deploying-testing-odoo-sh/)：讲解Odoo.sh，一个部署Odoo实例的PaaS平台，包含生产、模拟和开发分支的各方面。也讲解了该平台的不同选项。
 
-第二十章 Odoo中的远程过程调用（RPC）：涵盖从外部应用连接Odoo实例的不同方式。本章教你如何通过XML-RPC、JSON-RPC和odoorpc库连接和从 Odoo实例访问数据。
+[第二十章 Odoo中的远程过程调用（RPC）](https://alanhou.org/remote-procedure-calls-odoo/)：涵盖从外部应用连接Odoo实例的不同方式。本章教你如何通过XML-RPC、JSON-RPC和odoorpc库连接和从 Odoo实例访问数据。
 
-第二十一章 性能优化：讲解用于获取Odoo中性能提升的不同概念和模式。本章包含预提取、ORM缓存和代码性能测试来监测性能问题的概念。
+[第二十一章 性能优化](https://alanhou.org/performance-optimization/)：讲解用于获取Odoo中性能提升的不同概念和模式。本章包含预提取、ORM缓存和代码性能测试来监测性能问题的概念。
 
-第二十二章 POS（销售点）：涵盖 POS 应用的自定义。包含用户界面、添加新动作按钮、修改业务流和扩展客户菜单的自定义。
+[第二十二章 POS（销售点）](https://alanhou.org/point-sale/)：涵盖 POS 应用的自定义。包含用户界面、添加新动作按钮、修改业务流和扩展客户菜单的自定义。
 
-第二十三章 在Odoo中管理email：讲解如何在Odoo中管理email和聊天工具。通过配置邮件服务器开始，然后讲解Odoo框架的邮件API。本章还涵盖Jinja2和QWeb邮件模板、表单视图、字段记录和活动的聊天工具。
+[第二十三章 在Odoo中管理email](https://alanhou.org/manage-emails-odoo/)：讲解如何在Odoo中管理email和聊天工具。通过配置邮件服务器开始，然后讲解Odoo框架的邮件API。本章还涵盖Jinja2和QWeb邮件模板、表单视图、字段记录和活动的聊天工具。
 
-第二十四章 IoT盒子：给出了最新的IoT盒子硬件的重点讲解。本章涵盖如何配置、访问和调试IoT盒子。不包含一个集成IoT盒子到你的自定义插件的示范。
+[第二十四章 IoT盒子](https://alanhou.org/iot-box/)：给出了最新的IoT盒子硬件的重点讲解。本章涵盖如何配置、访问和调试IoT盒子。不包含一个集成IoT盒子到你的自定义插件的示范。
+
 
 ## 其它相关
 

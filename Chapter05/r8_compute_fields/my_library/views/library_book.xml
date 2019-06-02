@@ -24,11 +24,17 @@
                         <field name="state" />
                         <field name="pages" />
                         <field name="notes" />
+                        <field name="cost_price" />
+                        <field name="retail_price" />
+                        <field name="currency_id" />
+                        <field name="category_id" />
                     </group>
                     <group>
                         <field name="short_name" />
+                        <field name="publisher_id" />
                         <field name="date_release" />
                         <field name="date_updated" />
+                        <field name="age_days" />
                         <field name="cover" widget="image" class="oe_avatar" />
                         <field name="reader_rating" />
                     </group>
@@ -59,7 +65,7 @@
                 <field name="name" />
                 <field name="author_ids" />
                 <filter string="No Author"
-                        name="withou_author"
+                        name="without_author"
                         domain="[{'author_ids', '=', False}]" />
             </search>
         </field>

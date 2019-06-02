@@ -24,6 +24,9 @@
                         <field name="state" />
                         <field name="pages" />
                         <field name="notes" />
+                        <field name="cost_price" />
+                        <field name="retail_price" />
+                        <field name="currency_id" />
                     </group>
                     <group>
                         <field name="short_name" />

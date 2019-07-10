@@ -11,11 +11,11 @@ wget https://raw.githubusercontent.com/alanhou/odoo12-cookbook/master/Chapter01/
 
 #### 2. Make the script executable
 ```
-sudo chmod +x odoo_install.sh
+sudo chmod +x odoo-install.sh
 ```
 ##### 3. Execute the script:
 ```
-sudo ./odoo_install.sh
+sudo ./odoo-install.sh
 ```
 
 ##### 4. Stop all Odoo proccesses: 

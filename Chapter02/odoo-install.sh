@@ -20,10 +20,12 @@ read -t 30 -p "Please input your Git email(Hit Enter to skip):" git_email
 IP_ADDR=`ip addr | grep 'state UP' -A2 | grep inet|grep -v docker|tail -n1 | awk '{print $2}' | cut -f1  -d'/'`
 
 echo -e "\n---- Update Ubuntu ----"
+wget -q -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 sudo apt-get update
 
 echo -e "\n---- Install main dependencies ----"
-sudo apt-get install -y git python3.5 postgresql nano \
+sudo apt-get install -y git python3.5 postgresql-10 nano \
 virtualenv xz-utils wget fontconfig libfreetype6 libx11-6 \
 libxext6 libxrender1 xfonts-75dpi
 

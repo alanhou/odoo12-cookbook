@@ -51,7 +51,7 @@ cd ~/odoo-dev/${projectname}
 echo -e "\n---- Create standardized directories ----"
 virtualenv -p python3 env
 mkdir src local bin filestore logs
-git clone -b 12.0 --depth 1 --single-branch https://github.com/odoo/odoo.git src/odoo
+git clone -b master --depth 1 --single-branch https://github.com/odoo/odoo.git src/odoo
 env/bin/pip3 install -r src/odoo/requirements.txt
 
 

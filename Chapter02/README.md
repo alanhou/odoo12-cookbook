@@ -1,4 +1,4 @@
-# Odoo 12.0 Install Script
+# Odoo 13.0 Install Script
 #### With standardized structure for production
 
 This script is based on Chapter 2 of Odoo 12 Development Cookbook Third Edition
@@ -7,7 +7,7 @@ This script is based on Chapter 2 of Odoo 12 Development Cookbook Third Edition
 
 ##### 1. Download the script:
 ```
-wget https://raw.githubusercontent.com/alanhou/odoo12-cookbook/master/Chapter02/odoo-install.sh
+wget https://raw.githubusercontent.com/alanhou/odoo12-cookbook/odoo13/Chapter02/odoo-install.sh
 ```
 
 #### 2. Make the script executable & Execute the script:
@@ -17,7 +17,7 @@ sudo chmod +x odoo-install.sh && bash odoo-install.sh
 
 ##### 3. Start Odoo(you may need to change projectname & dbname): 
 ```
-~/odoo-dev/projectname/bin/odoo -d dbname start Odoo
+~/odoo-dev/projectname/bin/odoo -d dbname
 ```
 
 
@@ -35,5 +35,5 @@ cd ~/odoo-dev/${projectname}/src/odoo
 
 ##### 3. Start odoo:
 ```
-./odoo-bin --addons-path=addons,../../local -d test-12 -i account,sale,purchase --log-level=debug"
+./odoo-bin --addons-path=addons,../../local -d test-12 -i account,sale,purchase --log-level=debug
 ```

@@ -20,6 +20,7 @@ install_dependencies(){
   wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.bionic_amd64.deb
   sudo dpkg -i wkhtmltox_0.12.5-1.bionic_amd64.deb
   sudo apt-get install -f
+  rm -f wkhtmltox_0.12.5-1.bionic_amd64.deb
 
   echo -e "\n---- Installing PostgreSQL----"
   sudo apt install postgresql
@@ -37,13 +38,13 @@ install_dependencies(){
   createdb ${odoodb}
 
   echo -e "\n---- Initialize config file ----"
-  bin/odoo --stop-after-init --save -d ${odoodb} --addons-path src/odoo/odoo/addons,src/odoo/addons,local --data-dir filestore
+  bin/odoo --stop-after-init --save -d ${odoodb} -i base --addons-path src/odoo/odoo/addons,src/odoo/addons,local --data-dir filestore
 
 
   IP_ADDR=`ip addr | grep 'state UP' -A2 | grep inet|grep -v docker|tail -n1 | awk '{print $2}' | cut -f1  -d'/'`
 
   echo "-----------------------------------------------------------"
-  echo "Done! Use ~/odoo-dev/${projectname}/bin/odoo -c ${projectname}.cfg to start Odoo"
+  echo "Done! Activate your virtualenv & use ~/odoo-dev/${projectname}/bin/odoo -c ~/odoo-dev/${projectname}/${projectname}.cfg to start Odoo"
   echo "To start odoo manually:"
   echo "1. Activate virtualenv: source  ~/odoo-dev/${projectname}/env/bin/activate"
   echo "2. cd ~/odoo-dev/${projectname}/src/odoo"

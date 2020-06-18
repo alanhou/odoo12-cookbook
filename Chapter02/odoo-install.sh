@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################################
-# Script for installing Odoo 12 with standardized structure
+# Script for installing Odoo 13 with standardized structure
 # Author: Alan Hou
 # Website: https://alanhou.org
 #-------------------------------------------------------------------------------
@@ -25,17 +25,17 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs
 sudo apt-get update
 
 echo -e "\n---- Install main dependencies ----"
-sudo apt-get install -y git python3.5 postgresql-10 nano \
+sudo apt-get install -y git python3.6 postgresql-11 nano \
 virtualenv xz-utils wget fontconfig libfreetype6 libx11-6 \
 libxext6 libxrender1 xfonts-75dpi
 
 echo -e "\n---- Install wkhtmltopdf ----"
-wget "https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.xenial_amd64.deb" -O /tmp/wkhtml.deb
+wget "https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.$(lsb_release -c --short)_amd64.deb" -O /tmp/wkhtml.deb
 sudo dpkg -i /tmp/wkhtml.deb
 sudo apt-get -fy install
 
 echo -e "\n---- Install build dependencies ----"
-sudo apt-get install -y gcc python3.5-dev libxml2-dev \
+sudo apt-get install -y gcc python3.6-dev libxml2-dev \
 libxslt1-dev libevent-dev libsasl2-dev libssl-dev libldap2-dev \
 libpq-dev libpng-dev libjpeg-dev
 
@@ -51,7 +51,7 @@ cd ~/odoo-dev/${projectname}
 echo -e "\n---- Create standardized directories ----"
 virtualenv -p python3 env
 mkdir src local bin filestore logs
-git clone -b master --depth 1 --single-branch https://github.com/odoo/odoo.git src/odoo
+git clone -b 13.0 --depth 1 --single-branch https://github.com/odoo/odoo.git src/odoo
 env/bin/pip3 install -r src/odoo/requirements.txt
 
 
@@ -110,7 +110,7 @@ echo "Done! Use ~/odoo-dev/${projectname}/bin/odoo -d dbname to start Odoo"
 echo "To start odoo manually:"
 echo "1. Activate virtualenv: source  ~/odoo-dev/${projectname}/env/bin/activate"
 echo "2. cd ~/odoo-dev/${projectname}/src/odoo"
-echo "3. ./odoo-bin --addons-path=addons,../../local -d test-12 -i account,sale,purchase --log-level=debug"
+echo "3. ./odoo-bin --addons-path=addons,../../local -d test-13 -i account,sale,purchase --log-level=debug"
 echo "4. Open your browser and visit http://localhost:8069 or http://${IP_ADDR}:8069"
 echo "Default login & password: admin"
 echo "Press Ctrl+C to stop odoo"

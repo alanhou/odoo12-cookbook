@@ -12,7 +12,7 @@ install_dependencies(){
   echo -e "\n---- Installing dependencies----"
   cd ~/odoo-dev/${projectname}
   source env/bin/activate
-  sudo apt-get update
+  sudo apt-get update -y
   sudo apt install git python3-pip build-essential wget python3-dev python3-venv \
   python3-wheel libxslt-dev libzip-dev libldap2-dev libsasl2-dev python3-setuptools
   
@@ -23,7 +23,7 @@ install_dependencies(){
   rm -f wkhtmltox_0.12.5-1.bionic_amd64.deb
 
   echo -e "\n---- Installing PostgreSQL----"
-  sudo apt install postgresql
+  sudo apt install postgresql -y
   sudo -u postgres createuser --superuser $(whoami)
   pip3 install psycopg2-binary
   pip3 install -r src/odoo/requirements.txt
